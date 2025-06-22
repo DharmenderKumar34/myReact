@@ -1,0 +1,29 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "my new react app",
+  "default": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html"
+  },
+  "keywords": [
+    "namaste",
+    "react",
+    "app"
+  ],
+  "author": "dharmendar",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+
+  "browserslist":[
+    "last 2 chrome versions"
+  ]
+}
