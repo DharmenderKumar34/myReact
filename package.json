@@ -5,7 +5,8 @@
   "default": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "keywords": [
     "namaste",
@@ -15,15 +16,15 @@
   "author": "dharmendar",
   "license": "ISC",
   "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.15.2"
   },
   "dependencies": {
-    "parcel-bundler": "^1.12.5",
+    "parcel-bundler": "^1.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
-
-  "browserslist":[
-    "last 2 chrome versions"
+  "browserslist": [
+    "last 12 versions"
   ]
 }
