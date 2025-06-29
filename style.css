@@ -1,0 +1,25 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    margin-right: 20px;
+}
+nav>ul{
+    display: flex;
+    list-style: none;
+}
+nav>ul>li{
+    padding: 15px;
+}
+img{
+    width: 80px;
+}
+
+
+
+
