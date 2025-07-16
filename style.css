@@ -1,25 +1,87 @@
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.header{
+.nav-list {
+  border: 2px solid black;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+.nav-items {
+  display: flex;
+  list-style-type: none;
+}
+.nav-items > li {
+  padding: 10px;
+}
+.logo {
+  width: 70px;
+}
+.card {
+  border: 2px solid black;
+  margin: 2px;
+  padding: 2px;
+  width: 300px;
+}
+.card > img {
+    width: 100%;
+}
+.rest{
     display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    margin-right: 20px;
-}
-nav>ul{
-    display: flex;
-    list-style: none;
-}
-nav>ul>li{
-    padding: 15px;
-}
-img{
-    width: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* // theme: "SeoRestaurantListingGridWidget",
+    //   name:"Indian coffe house",
+    //   imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2469fa88ee9b0b5d1366ba88f2a7fa7f",
+    //   cuisiness:["South","indian"],
+    //   rating:"4.4 star 40-45 min"
+    // },
+    // {
+    //   name:"Yummy better",
+    //   imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/8/22/5c6d3a34-1ac1-44ca-94cf-7e9122459ebc_945448.jpg",
+    //   cuisiness:["South indian","Fast food"],
+    //   rating:"4.4 star 40-45 min"
+    // },
+    // {
+    //   name:"Deccan dosa",
+    //   imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/seo/DO_collectionBanner.png",
+    //   cuisiness:["South indian"],
+    //   rating:"4.2 star 40-45 min" */
