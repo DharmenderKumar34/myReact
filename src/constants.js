@@ -1,33 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-const Header = () => {
-  return (
-    <div className="nav-list">
-      <div>
-        <a href="/">
-          <img
-            src="https://lh3.googleusercontent.com/Em7AHf7XBH_RtGfCBVXz9RH8SM_pHkj3xPP-yd3cRguY1_Jc8fmqgx6WxnvGVyPV5xs5gL3HCD0FCuv6Xo4CwoY6ak4"
-            alt="logo"
-            className="logo"
-          />
-        </a>
-      </div>
-      <div
-        style={{
-          backgroundColor: "red",
-        }}
-      >
-        <ul className="nav-items">
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const restaurantlist = [
+export const Restaurantlist = [
   {
     "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
@@ -751,37 +722,6 @@ const restaurantlist = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
 ];
-const Restrauntcard = ({ restaurant }) => {
-  const { name, avgRating, cloudinaryImageId, cuisines } = restaurant;
-  console.log(restaurant);
-  return (
-    <div className="card">
-      <img
-        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
-      />
-      <h2>{name}</h2>
-      <h3>{avgRating} star</h3>
-      <h4>{cuisines.join(", ")}</h4>
-    </div>
-  );
-};
-const Body = () => {
-  return (
-    <div className="rest">
-      {restaurantlist.map((restaurant, index) => (
-        <Restrauntcard restaurant={restaurant.info} key={index} />
-      ))}
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <React.Fragment>
-      <Header />
-      <Body />
-    </React.Fragment>
-  );
-};
-let root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+// export default Restaurantlist
+const IMG_CDN_URl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
+export default IMG_CDN_URl
