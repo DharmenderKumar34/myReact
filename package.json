@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
+    "dev": "parcel index.html",
     "build": "parcel build index.html"
   },
   "keywords": [
@@ -13,18 +14,18 @@
     "react",
     "app"
   ],
-  "author": "dharmendar",
+  "author": "dharmander",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.27.4",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "parcel": "^2.15.2"
+    "parcel": "^2.15.4"
   },
   "dependencies": {
-    "parcel-bundler": "^1.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "browserslist": [
-    "last 12 versions"
+    "last 10  versions"
   ]
 }

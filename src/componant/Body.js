@@ -6,21 +6,31 @@ const Body = () => {
   const [searchText, setsearchinput] = useState("");
   const [resto, setsearchclick] = useState(Restaurantlist);
   // console.log("render")
-  useEffect(()=>{
-    console.log("render");
-  },[searchText])
-  console.log("object");
+
+ async function getRestaurant() {
+    const data=await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    )
+  console.log(data);
+    const json=await data.json()
+        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setsearchclick(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)||[]
+  }
+
+  useEffect(() => {
+    // console.log("useeffect",searchText);
+    getRestaurant();
+  }, []);
+
+  // console.log();
   const filterData = () => {
     // console.log("restrunt", resto);
-    const rest = Restaurantlist.filter((res) => {
+    const rest = resto.filter((res) => {
       return res.info.name
         .toLocaleLowerCase()
         .includes(searchText.toLocaleLowerCase());
     });
-    // console.log(rest);
-
     setsearchclick(rest);
-  
   };
   return (
     <React.Fragment>
