@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Restaurantlist } from "../constants";
+// import { Restaurantlist } from "../constants";
 import Restrauntcard from "./Restrauntcard";
+import Simmer from "./Simmer";
 // import {useState} from "react";
 const Body = () => {
   const [searchText, setsearchinput] = useState("");
-  const [resto, setsearchclick] = useState(Restaurantlist);
+  const [resto, setsearchclick] = useState([]);
+  const [Filterresto, setFiltersearchclick] = useState([]);
+
   // console.log("render")
 
- async function getRestaurant() {
-    const data=await fetch(
+  async function getRestaurant() {
+    const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    )
-  console.log(data);
-    const json=await data.json()
-        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-        setsearchclick(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)||[]
+    );
+    // console.log(data);
+    const json = await data.json();
+    // console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    setsearchclick(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    ) || [];
+    setFiltersearchclick(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    ) || [];
   }
 
   useEffect(() => {
@@ -30,9 +38,13 @@ const Body = () => {
         .toLocaleLowerCase()
         .includes(searchText.toLocaleLowerCase());
     });
-    setsearchclick(rest);
+    // setsearchclick(rest);
+    setFiltersearchclick(rest);
   };
-  return (
+  console.log("renderbody");
+  return resto?.length === 0 ? (
+    <Simmer />
+  ) : (
     <React.Fragment>
       <div>
         <input
@@ -56,9 +68,13 @@ const Body = () => {
       </div>
 
       <div className="rest">
-        {resto.map((restaurant, index) => (
-          <Restrauntcard restaurant={restaurant.info} key={index} />
-        ))}
+        {Filterresto.length == 0 ? (
+          <h1>No data found</h1>
+        ) : (
+          Filterresto.map((restaurant, index) => (
+            <Restrauntcard restaurant={restaurant.info} key={index} />
+          ))
+        )}
       </div>
     </React.Fragment>
   );
