@@ -29,70 +29,42 @@
   width: 275px;
   border-radius: 5px;
   overflow: hidden;
- 
-  
+  color: black;
+  height: 375px;
 }
 .card > img {
-    border: 1.5px solid black;
-    width: 100%;
-    height: 225px;
+  border: 1.5px solid black;
+  width: 100%;
+  height: 225px;
 }
-.card:hover{
+.card:hover {
   transition: all 0.5s ease-in-out;
   cursor: pointer;
   transform: translateY(-10px);
 }
-.rest{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-     gap: 10px;
-}
-.Simmer-parent{
+.rest {
   display: flex;
   flex-wrap: wrap;
-   justify-content: center;
+  justify-content: center;
+  gap: 10px;
 }
-.Restrauntlist{
+.Simmer-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+/* .Restrauntlist{
   width: 275px;
   height: 367px;
   border: 1px solid black;
   margin: 10px;
   padding: 10px ;
-}
+} */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /* // theme: "SeoRestaurantListingGridWidget",
+/* // theme: "SeoRestaurantListingGridWidget",
     //   name:"Indian coffe house",
     //   imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2469fa88ee9b0b5d1366ba88f2a7fa7f",
     //   cuisiness:["South","indian"],

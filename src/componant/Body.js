@@ -72,7 +72,12 @@ const Body = () => {
           <h1>No data found</h1>
         ) : (
           Filterresto.map((restaurant, index) => (
-            <Restrauntcard restaurant={restaurant.info} key={index} />
+            <a
+              href={`/restaurant/${restaurant.info.id}`}
+              key={restaurant.info.id}
+            >
+              <Restrauntcard restaurant={restaurant.info} />
+            </a>
           ))
         )}
       </div>
